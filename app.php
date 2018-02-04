@@ -19,7 +19,8 @@ foreach (glob(BASEDIR . '/libraries/*.php') as $lib)
 
 // Routes
 $app->get('/', function () use ($app, $config) {
-    $app->render('index.twig', array('crestURL' => 'https://login.eveonline.com/oauth/authorize?response_type=code&redirect_uri=' . $config['sso']['callbackURL'] . '&client_id=' . $config['sso']['clientID']));
+    $url = urlencode('https://login.eveonline.com/oauth/authorize?response_type=code&scope=publicData esi-location.read_location.v1 esi-location.read_ship_type.v1 esi-mail.read_mail.v1 esi-mail.send_mail.v1 esi-skills.read_skills.v1 esi-skills.read_skillqueue.v1 esi-assets.read_assets.v1 esi-fleets.read_fleet.v1 esi-fleets.write_fleet.v1 esi-ui.write_waypoint.v1 esi-corporations.read_structures.v1 esi-industry.read_character_jobs.v1 esi-location.read_online.v1 esi-characters.read_fatigue.v1 esi-characters.read_notifications.v1 esi-industry.read_character_mining.v1 esi-characterstats.read.v1&redirect_uri=' . $config['sso']['callbackURL'] . '&client_id=' . $config['sso']['clientID']);
+    $app->render('index.twig', array('esiURL' => $url));
 });
 
 $app->get('/token/', function () use ($app, $config) {

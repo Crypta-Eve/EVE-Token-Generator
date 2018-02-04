@@ -34,7 +34,7 @@ function getData($url)
 }
 
 function sendData($url, $postData = array(), $headers = array()) {
-    $userAgent = "Discord Auth";
+    $userAgent = "Firetail";
 
     // Define default headers
     if (empty($headers)) {
