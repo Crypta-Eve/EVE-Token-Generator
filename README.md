@@ -3,8 +3,6 @@ Generates a refresh token to be used by other applications
 
 https://discord.gg/ZWmzTP3 To discuss and for support.
 
-Intended to be used with https://github.com/shibdib/Firetail
-
 What It Does
 -
 This program will host a web page that has you sign in via EVE Online SSO, and creates a token
