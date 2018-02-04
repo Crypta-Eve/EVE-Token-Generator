@@ -6,6 +6,7 @@ $config['sso'] = array(
     'clientID' => '', // https://developers.eveonline.com/
     'secretKey' => '',
     'callbackURL' => '', // Include trailing / (Will be the url_to_the_index.com/auth/)
+    'scopes' => '' // Click copy scopes to clipboard and paste them here
 );
 
 // Site IGNORE EVERYTHING BELOW THIS LINE

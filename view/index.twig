@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/frameworks/bootstrap/3.0.0/themes/cirrus/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        var delete_cookie = function(name) {
-            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        };
-        delete_cookie('eveCode');
-    </script>
     <style type="text/css">
         /* Space out content a bit */
         body {
@@ -45,7 +39,7 @@
         /* Customize container */
         @media(min-width: 768px) {
             .container {
-                max-width: 730px;
+                max-width: 1080px;
             }
         }
         .container-narrow > hr {
@@ -95,8 +89,7 @@
     <div class="jumbotron">
         <h1>EVE Online</h1>
         <p class="lead">Click the button below to securely login with your EVE Online account.</p>
-        <p>This login will create a token that contains access to everything the Firetail bot will need.</p>
-        <p>This token is NOT stored at any point of this process.</p>
+        <p>The token created with this link is NOT stored at any point of this process.</p>
         <p><a href="{{ esiURL }}"><img src="https://images.contentful.com/idjq7aai9ylm/4fSjj56uD6CYwYyus4KmES/4f6385c91e6de56274d99496e6adebab/EVE_SSO_Login_Buttons_Large_Black.png"/></a></p>
     </div>
 </div>

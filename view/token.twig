@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://djyhxgczejc94.cloudfront.net/frameworks/bootstrap/3.0.0/themes/cirrus/bootstrap.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function copyOnClick($token) {
+            $token.select();
+            document.execCommand("copy");
+        }
+    </script>
     <style type="text/css">
         /* Space out content a bit */
         body {
@@ -39,7 +45,7 @@
         /* Customize container */
         @media(min-width: 768px) {
             .container {
-                max-width: 730px;
+                max-width: 1080px;
             }
         }
         .container-narrow > hr {
@@ -87,9 +93,8 @@
         <ul class="nav nav-pills pull-right"></ul>
     </div>
     <div class="jumbotron">
-        <h1>Login Successful</h1>
-        <p class="lead">EVE Online Token</p>
-        <p>Please copy the following token and send it to your Firetail bot using the !token your_token command.</p>
+        <h1>Token Successfully Generated</h1>
+        <p class="lead">Copy the String Below</p>
         <p>{{ token }}</p>
     </div>
 </div>
