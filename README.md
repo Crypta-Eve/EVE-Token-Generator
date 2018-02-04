@@ -3,6 +3,8 @@ Generates a refresh token to be used by other applications
 
 https://discord.gg/ZWmzTP3 To discuss and for support.
 
+http://token.shibdib.info Example Site.
+
 What It Does
 -
 This program will host a web page that has you sign in via EVE Online SSO, and creates a token
