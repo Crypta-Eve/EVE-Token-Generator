@@ -19,7 +19,7 @@ foreach (glob(BASEDIR . '/libraries/*.php') as $lib)
 
 // Routes
 $app->get('/', function () use ($app, $config) {
-    $scopes = str_replace($config['sso']['scopes'], ' ', '%20');
+    $scopes = str_replace(' ', '%20', $config['sso']['scopes']);
     $app->render('index.twig', array('esiURL' => 'https://login.eveonline.com/oauth/authorize?response_type=code&scope=' . $scopes . '&redirect_uri=' . $config['sso']['callbackURL'] . '&client_id=' . $config['sso']['clientID']));
 });
 
