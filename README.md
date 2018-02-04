@@ -8,7 +8,6 @@ What It Does
 This program will host a web page that has you sign in via EVE Online SSO, and creates a token
 with access depending on the application you created.
 
-
 Requirements
 -
 - PHP7 
@@ -19,10 +18,6 @@ Requirements
 Install
 -
 Read the Wiki!
-
-Known Issues
--
-- Roles added manually are not removed (yet...)
 
 Gratuity
 -
