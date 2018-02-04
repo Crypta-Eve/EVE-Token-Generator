@@ -28,5 +28,5 @@ Known Issues
 
 Gratuity
 -
-Like the features? Send 'Mr Twinkie' some isk and a mail letting me know you're a fan!
+Like the features? Send 'Mr Twinkie' some isk and a mail letting me know you're a fan! 
 
