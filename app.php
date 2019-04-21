@@ -20,13 +20,13 @@ foreach (glob(BASEDIR . '/libraries/*.php') as $lib)
 // Routes
 $app->get('/', function () use ($app, $config) {
     $scopes = str_replace(' ', '%20', $config['sso']['scopes']);
-    $app->render('index.twig', array('esiURL' => 'https://login.eveonline.com/oauth/authorize?response_type=code&scope=' . $scopes . '&redirect_uri=' . $config['sso']['callbackURL'] . '&client_id=' . $config['sso']['clientID']));
+    $app->render('index.twig', array('esiURL' => 'https://login.eveonline.com/v2/oauth/authorize?response_type=code&scope=' . $scopes . '&redirect_uri=' . $config['sso']['callbackURL'] . '&client_id=' . $config['sso']['clientID'] . '&state=ireallyshouldimplementthis'));
 });
 
 $app->get('/token/', function () use ($app, $config) {
     $code = $_GET['code'];
 
-    $tokenURL = 'https://login.eveonline.com/oauth/token';
+    $tokenURL = 'https://login.eveonline.com/v2/oauth/token';
     $base64 = base64_encode($config['sso']['clientID'] . ':' . $config['sso']['secretKey']);
 
     $data = json_decode(sendData($tokenURL, array(
@@ -35,7 +35,10 @@ $app->get('/token/', function () use ($app, $config) {
     ), array("Authorization: Basic {$base64}")));
 
     $refreshToken = $data->refresh_token;
-    $app->render('token.twig', array('token' => $refreshToken));
+    $accessToken = $data->access_token;
+    $expires = time() + $data->expires_in;
+
+    $app->render('token.twig', array('token' => $refreshToken, 'atoken' => $accessToken, 'expiration' => date("M, d, Y h:i A", $expires)));
 });
 
 $app->run();
